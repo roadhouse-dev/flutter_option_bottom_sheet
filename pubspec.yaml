@@ -10,10 +10,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_hooks: 0.6.1
+  functional_widget_annotation: ^0.5.1
 
 dev_dependencies:
+  build_runner: ^1.7.1
   flutter_test:
     sdk: flutter
+  functional_widget:
+    git:
+      url: 'https://github.com/Insight-Timer/functional_widget.git'
+      path: 'functional_widget'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,14 +1,34 @@
-# flutteroptionbottomsheet
+# flutter option bottom sheet
 
-A new Flutter package.
+A simple Bottom sheet Widget
 
-## Getting Started
+## How to use
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```dart
+  final source = await showModalBottomSheet(
+      context: context,
+      builder: (dialogContext) {
+        return OptionBottomSheet(
+          title: Text(Strings.selectProfileImageTitle),
+          subTitle: Text(Strings.selectProfileImageSubtitle),
+          optionItems: [
+            OptionItem(
+              icon: Icon(Icons.camera_alt),
+              title: Strings.takePhoto,
+              value: SourceType.camera,
+            ),
+            OptionItem(
+              icon: Icon(Icons.image),
+              title: Strings.selectImage,
+              value: SourceType.gallery,
+            ),
+          ],
+          onSelection: (source) {
+            ImageSource imageSource = source == SourceType.camera
+                ? ImageSource.camera
+                : ImageSource.gallery;
+            Navigator.of(dialogContext).pop(imageSource);
+          },
+        );
+      });
+```
