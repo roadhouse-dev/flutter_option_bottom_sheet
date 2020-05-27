@@ -41,7 +41,7 @@ Widget optionBottomSheet(
             alignment: Alignment.centerLeft,
             child: DefaultTextStyle(
               child: title,
-              style: Theme.of(context).textTheme.subhead,
+              style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
           if (subTitle != null)
